@@ -1,0 +1,113 @@
+#:kivy 1.11.0
+#:import Label kivy.uix.label.Label
+<MyScreen>:
+    container: container
+    BoxLayout:
+        orientation: 'vertical'
+
+        GridLayout:
+            id: container
+            cols: 2
+
+            row_default_height: dp(60)
+            col_default_width: dp(200)
+
+            Label:
+                text: "Player 1"
+                pos_hint: {'x': -0.2, 'y': 0.3}
+                size_hint: (0.1,  0.1)
+            TextInput:
+                id: player1
+                pos_hint: {'x': 0.3, 'y': 0.3}
+                size_hint: (0.7,  0.1)
+                write_tab: False
+                multiline: False
+                on_text_validate: player2.focus = True
+
+            Label:
+                text: "Player 2"
+                pos_hint: {'x': -0.2, 'y': 0.3}
+                size_hint: (0.1,  0.1)
+            TextInput:
+                id: player2
+                pos_hint: {'x': 0.3, 'y': 0.3}
+                size_hint: (0.7,  0.1)
+                write_tab: False
+                multiline: False
+                on_text_validate: player3.focus = True
+
+            Label:
+                text: "Player 3"
+                pos_hint: {'x': -0.2, 'y': 0.3}
+                size_hint: (0.1,  0.1)
+            TextInput:
+                id: player3
+                pos_hint: {'x': 0.3, 'y': 0.3}
+                size_hint: (0.7,  0.1)
+                write_tab: False
+                multiline: False
+                on_text_validate: player4.focus = True
+
+            Label:
+                text: "Player 4"
+                pos_hint: {'x': -0.2, 'y': 0.3}
+                size_hint: (0.1,  0.1)
+            TextInput:
+                id: player4
+                pos_hint: {'x': 0.3, 'y': 0.3}
+                size_hint: (0.7,  0.1)
+                write_tab: False
+                multiline: False
+                on_text_validate: player5.focus = True
+
+            Label:
+                text: "Player 5"
+                pos_hint: {'x': -0.2, 'y': 0.3}
+                size_hint: (0.1,  0.1)
+            TextInput:
+                id: player5
+                pos_hint: {'x': 0.3, 'y': 0.3}
+                size_hint: (0.7,  0.1)
+                write_tab: False
+                multiline: False
+                on_text_validate: player6.focus = True
+
+            Label:
+                text: "Player 6"
+                pos_hint: {'x': -0.2, 'y': 0.3}
+                size_hint: (0.1,  0.1)
+            TextInput:
+                id: player6
+                pos_hint: {'x': 0.3, 'y': 0.3}
+                size_hint: (0.7,  0.1)
+                write_tab: False
+                multiline: False
+                on_text_validate: player7.focus = True
+            Label:
+                text: "Player 7"
+                pos_hint: {'x': -0.2, 'y': 0.3}
+                size_hint: (0.1,  0.1)
+            TextInput:
+                id: player7
+                pos_hint: {'x': 0.3, 'y': 0.3}
+                size_hint: (0.7,  0.1)
+                write_tab: False
+                multiline: False
+                on_text_validate: 
+                    root.save_data()
+                    app.sm.current = "screen_2"
+
+        Button:
+            text: "Show"
+            size_hint_y: None
+            height: '48dp'
+
+            on_press: root.save_data()
+            on_release: app.sm.current = "screen_2"
+
+<ScreenTwo>:
+    on_pre_enter:
+    BoxLayout:
+        orientation:'vertical'
+
+
